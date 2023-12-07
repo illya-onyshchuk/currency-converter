@@ -1,0 +1,39 @@
+
+header{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(200, 199, 214, 0.9);
+  border-radius: 5px;
+  box-shadow: 4px 8px 20px #aaa9b6, 20px -19px 60px #e6e5f6;
+}
+
+.logo__container {
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+
+}
+
+.logo__container h5{
+  font-size: 20px;
+  padding-left: 10px;
+  opacity: .8;
+}
+
+.logo {
+  max-width: 60px;
+}
+
+.currency__container {
+  display: flex; 
+  position: relative;
+  align-items: center;
+  font-size: 23px;
+  color: #452727;
+}
+
+.currency__error {
+  color: red;
+  font-size: 16px;
+}

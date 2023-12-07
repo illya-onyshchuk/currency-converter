@@ -1,0 +1,55 @@
+.converter__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
+
+.converter__container button {
+  display: inline-block;
+  width: 4em;
+  height: 2.6em;
+  line-height: 2.5em;
+  margin: 20px;
+  z-index: 1;
+  border: none;
+  border-radius: 9px;
+  position: relative;
+  background: transparent;
+}
+
+.converter__container button img {
+  width: 30px;
+  position: relative;
+  right: 2px;
+  top: 5px;
+}
+
+.converter__container button::before {
+  position: absolute;
+  content: "";
+  width: 150px;
+  height: 200px;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.converter__container button:hover {
+  cursor: pointer;
+}
+
+.converter__container button:before {
+  top: 100%;
+  left: 100%;
+}
+
+.converter__container button:hover::before {
+  top: -30px;
+  left: -30px;
+}
+
+
+
+
+
