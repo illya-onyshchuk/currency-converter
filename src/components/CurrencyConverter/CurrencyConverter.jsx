@@ -22,13 +22,20 @@ const CurrencyConverter = ({ currencyRates }) => {
   }, [currencyRates]);
 
   const handleAmountChange = (value, field) => {
+    if (value === "") {
+      setAmountFrom("");
+      setAmountTo("");
+      return;
+    }
+
     const test = value.replace(/[^\d,.]/g, "").trim();
     const amount = parseFloat(test);
 
     if (field === "from") {
-      setAmountFrom(value);
+      setAmountFrom(test);
       const converted = (
-        amount * currencyRatesMap[selectedCurrencyFrom].rate
+        (amount * currencyRatesMap[selectedCurrencyFrom].rate) /
+        currencyRatesMap[selectedCurrencyTo].rate
       ).toFixed(2);
       setAmountTo(converted);
     }
@@ -46,13 +53,11 @@ const CurrencyConverter = ({ currencyRates }) => {
   const handleCurrencyChange = (value, field) => {
     if (field === "from") {
       setSelectedCurrencyFrom(value);
-      setAmountFrom("");
-      setAmountTo("");
     } else if (field === "to") {
       setSelectedCurrencyTo(value);
-      setAmountFrom("");
-      setAmountTo("");
     }
+    setAmountFrom("");
+    setAmountTo("");
   };
 
   const handleClick = () => {
